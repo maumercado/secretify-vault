@@ -1,0 +1,48 @@
+{
+  "name": "secretify-vault",
+  "version": "1.0.0",
+  "description": "Secretify secret fetcher for HashiCorp Vault",
+  "main": "index.js",
+  "scripts": {
+    "fix": "standard --fix",
+    "lint": "standard | snazzy",
+    "lint-staged": "lint-staged",
+    "test": "tap -j1 -R classic",
+    "validate": "npm run lint && npm run test"
+  },
+  "keywords": [
+    "secrets",
+    "env"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maumercado/secretify-vault.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maumercado/secretify-vault/issues"
+  },
+  "homepage": "https://github.com/maumercado/secretify-vault#readme",
+  "author": "Mauricio Mercado",
+  "license": "MIT",
+  "devDependencies": {
+    "lint-staged": "^10.5.4",
+    "nock": "^13.0.11",
+    "pre-commit": "^1.2.2",
+    "snazzy": "^9.0.0",
+    "standard": "^16.0.3",
+    "tap": "^15.0.4"
+  },
+  "pre-commit": [
+    "lint-staged",
+    "validate"
+  ],
+  "lint-staged": {
+    "*.{js}": [
+      "npm run fix"
+    ]
+  },
+  "dependencies": {
+    "debug": "^4.3.1",
+    "got": "^11.8.2"
+  }
+}
